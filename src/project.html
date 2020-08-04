@@ -9,6 +9,14 @@
   <body>
     <div class="container">
       <h1>Flask React</h1>
+	<table border = 1>
+         {% for projectname in projectname.items() %}
+            <tr>
+               <th> {{ projectname }} </th>
+               <td> {{ projectname }} </td>
+            </tr>
+         {% endfor %}
+      </table>
       <div id="content"></div>
     </div>
 

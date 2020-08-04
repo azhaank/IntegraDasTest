@@ -10,7 +10,7 @@ import sys
 import logging
 
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='src')
 #print(current_time)
 
 """conn = sqlite3.connect('database.db')
@@ -44,18 +44,19 @@ def Home():
 @app.route('/api/home/project',methods=['GET','POST'])
 def project():
     app.logger.info('Processing default request from project')
-    """rows=get_projects()
+    rows=get_projects()
     if rows:
         data = rows[0]
-        projectname = str(data)
-        app.logger.info(rows)
-        return make_response(jsonify(projectname),200)"""
+        projectname1 = str(data)
+	projectname1= projectname1['projectname']
+        app.logger.info(projectname1)
+        #return make_response(jsonify(projectname),200)"""
     #return "Currently No Prjects available, create new one"
     if request.method == 'POST':
         with sqlite3.connect("database.db") as con:
             try:
                 req = request.get_json()
-                app.logger.info("request from react" ,req)
+                app.logger.info("request from react",req)
                 projectname=req['name']
                 app.logger.info(projectname)
                 print("project name", flush=True)
@@ -69,7 +70,7 @@ def project():
                 con.rollback()
                 msg = "error in insert operation"
             finally:
-                return render_template('project.html', msg=msg)
+                return render_template('project.html', msg=msg,projectname=projectname1)
                 con.close()
     #if request.method=='GET':  
     return "Error 123."		
