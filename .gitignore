@@ -19,6 +19,8 @@ venv
 .env.test.local
 .env.production.local
 __pycache__
+.swo
+.swp
 
 npm-debug.log*
 yarn-debug.log*
