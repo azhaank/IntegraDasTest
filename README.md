@@ -92,6 +92,12 @@ def get_projects():
 # Here is my Flask-React Homepage for adding projects:
 
 ![myimage-alt-tag](https://github.com/azhaank/IntegraDasTest/blob/firstbranch/src/frontend.PNG)
+
+# Here is my Flask-React Form Submitted:
+
+![myimage-alt-tag](https://github.com/azhaank/IntegraDasTest/blob/firstbranch/src/formSubmit.PNG)
+
+
 # Here is my output screen of the created project with randomly generated IP addresses:
 ![myimage-alt-tag](https://github.com/azhaank/IntegraDasTest/blob/firstbranch/src/output.PNG)
 
