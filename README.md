@@ -8,16 +8,23 @@ The following webapp is built using flask-react along with sqlite. Use can creat
 • CodingHub • VisualizationArena • AmazingEDA. Each app has a unique 6 digit IP address that has been spawned by a service on your cutting edge Kubernetes cluster. For the purpose of this assignment, you will be randomly generating a 6 digit number that will act as an IP address.  
  
 ## Installation
+You need to install three packages on your machine:
+
+<pre>Node.js: The JavaScript runtime that you will use to run your frontend project.</pre>
+<pre>Yarn: A package and project manager for Node.js applications.</pre>
+<pre>Python: A recent Python 3 interpreter to run the Flask backend on.</pre>
 
 ## Creating a Starter React Project
 There are several ways to create a combined project with React and Flask. I prefer to start from the frontend because the project structure is much more complex than the backend. For this example I used the create-react-app generator to create a simple React project to start from:
-
+<pre><code>
 $ npx create-react-app react-flask-app
 $ cd react-flask-app
+</code></pre>
+
 The npx command comes with Node.js. It is a simple project runner that downloads the requested command if it isn't already available and in the system's PATH. The first argument is the command to execute. The second argument is the name of the project to create. When this command completes, you will have a react-flask-app directory with a complete and fully functional simple react project.
 
 Since you will work on this project from now on, you can cd into react-flask-app so that it is your current directory. If you list the directory you should see the top-level structure, which should be more or less like this:
-
+<pre><code>
 $ ls -l
 total 912
 -rw-r--r--     1 mgrinberg  staff    2884 Feb 10 14:54 README.md
@@ -26,6 +33,7 @@ drwxr-xr-x  1027 mgrinberg  staff   32864 Feb 10 15:03 node_modules
 drwxr-xr-x     8 mgrinberg  staff     256 Feb 10 14:54 public
 drwxr-xr-x    10 mgrinberg  staff     320 Feb 10 23:50 src
 -rw-r--r--     1 mgrinberg  staff  454962 Feb 10 14:54 yarn.lock
+</code></pre>
 
 ## Creating a Flask API Backend
 The next step is to create the Flask project. Create directories
