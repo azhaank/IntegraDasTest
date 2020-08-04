@@ -48,9 +48,8 @@ def project():
     if rows:
         data = rows[0]
         projectname1 = str(data)
-	projectname1= projectname1[0]
         app.logger.info(projectname1)
-        #return make_response(jsonify(projectname),200)"""
+    #return make_response(jsonify(projectname),200)
     #return "Currently No Prjects available, create new one"
     if request.method == 'POST':
         with sqlite3.connect("database.db") as con:
