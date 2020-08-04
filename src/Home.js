@@ -1,7 +1,7 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
 //import logo from './logo.svg';
-import './style.css';
+import './Home.css';
 
 //Form component
 class NewProjectForm extends React.Component {
@@ -16,16 +16,16 @@ class NewProjectForm extends React.Component {
   }
   
   handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+    //const target = event.target;
+    //const value = target.type === 'checkbox' ? target.checked : target.value;
+    //const name = target.name;
     
-    this.setState({[name]:value});
+    this.setState({name:event.target.value});
   }
 
   handleSubmit(event) {
 	console.log('Saving Project '+ this.state.name);
-	fetch("/api/home/project/", {
+	fetch("/api/home/project", {
         method:"POST",
         cache: "no-cache",
         headers:{
@@ -34,11 +34,12 @@ class NewProjectForm extends React.Component {
         body:JSON.stringify(this.state.name)
         }
     ).then(response => {
+    if(response.ok){
     console.log(response.json())
-    return response.json()
+    return response.json();}
   }).then(json => {
   console.log(json)
-  this.setState({name:json[0]})})
+  this.setState({name:json})})
     alert('A form was submitted: ' + this.state.name);
     event.preventDefault();
   }
@@ -47,9 +48,9 @@ class NewProjectForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} action="http://localhost:5000/api/home/project/" method="POST">
-          <div className="Home">
+          <div className="Home-Grp">
             <label htmlFor="nameImput">Project Name</label>
-            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className="form-control" id="nameImput" placeholder="Project Name" />
+            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className="Home-control" id="nameImput" placeholder="Project Name" />
           </div>
           <input type="submit" value="+CreateNewProject" className="btn btn-primary" />
         </form>

@@ -29,6 +29,11 @@ CORS(app)
 logging.basicConfig(level=logging.DEBUG)
 @app.route('/')
 def index():
+    """rows=get_projects()
+    if rows:
+        data = rows[0]
+        projectname = str(data)
+        app.logger.info(rows)"""
     return render_template("Index.html")
    
 @app.route('/api/home')
