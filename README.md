@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Topic
-A webapp for using Flask and React for IntegraDas 
+A webapp using Flask and React for IntegraDas Interview Process - Alhamd Khan
 
 ## About 
 The following webapp is built using flask-react along with sqlite. Use can create a project, and a page is created with the following apps: 
